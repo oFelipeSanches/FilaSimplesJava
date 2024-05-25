@@ -49,6 +49,16 @@ public class FilaSimples<T> {
         return this.elementos[0];
     }
 
+    public void aumentarCapacidade() {
+        if(this.tamanho == this.elementos.length) {
+            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
+            for (int i = 0; i < this.elementos.length; i++) {
+                elementosNovos[i] = this.elementos[i];
+            }
+            this.elementos = elementosNovos;
+        }
+    }
+
     public void exibirFila() {
 
     }
