@@ -12,7 +12,7 @@ public class FilaSimples<T> {
     }
 
     public FilaSimples() {
-        EstruturaEstatica(10);
+        EstruturaEstatica(5);
     }
 
     public void enfileira(T elemento) {
