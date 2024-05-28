@@ -24,7 +24,6 @@ public class FilaSimples<T> {
         }
     }
 
-
     public T desenfileira() {
 
         final int posicao = 0;
@@ -59,7 +58,16 @@ public class FilaSimples<T> {
         }
     }
 
-    public void exibirFila() {
+    public void removerTodasOcorrencias(T valor) {
+
+        int novoTamanho = 0;
+
+        for (int i = 0; i < this.tamanho; i++) {
+            if (!this.elementos[i].equals(valor)) {
+                this.elementos[novoTamanho++] = this.elementos[i];
+            }
+        }
+        this.tamanho = novoTamanho;
 
     }
 

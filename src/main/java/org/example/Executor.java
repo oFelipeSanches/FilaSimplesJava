@@ -51,23 +51,22 @@ public class Executor {
 
         fila.enfileira(2);
         fila.enfileira(1);
-        fila.enfileira(14);
+        fila.enfileira(7);
         fila.enfileira(2);
-        fila.enfileira(22);
+        fila.enfileira(4);
+        System.out.println(fila.toString());
+        fila.removerTodasOcorrencias(2);
+        System.out.println(fila.toString());
+        fila.enfileira(2);
+        fila.enfileira(1);
         fila.aumentarCapacidade();
-        fila.enfileira(23);
-        fila.aumentarCapacidade();
+        fila.enfileira(2);
+        fila.enfileira(1);
+        fila.enfileira(7);
+        fila.enfileira(2);
+        fila.enfileira(4);
         System.out.println(fila.toString());
-        fila.desenfileira();
-        System.out.println(fila.toString());
-        fila.desenfileira();
-        System.out.println(fila.toString());
-        fila.desenfileira();
-        System.out.println(fila.toString());
-        fila.enfileira(27);
-        fila.enfileira(-27);
-        fila.enfileira(27);
-        fila.enfileira(27);
+        fila.removerTodasOcorrencias(7);
         System.out.println(fila.toString());
 
     }
