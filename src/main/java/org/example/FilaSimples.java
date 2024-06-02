@@ -104,6 +104,20 @@ public class FilaSimples<T> {
         return maior;
     }
 
+    public Integer menor() {
+        if (isEmpty()) {
+            throw new RuntimeException("A fila está vazia!");
+        }
+        Integer menor = (Integer) this.elementos[0];
+        for (int i = 0; i < this.tamanho; i++) {
+            Integer elementoAtual = (Integer) this.elementos[i];
+            if(elementoAtual < menor) {
+                menor = elementoAtual;
+            }
+        }
+        return menor;
+    }
+
     public boolean isEmpty() {
         return this.tamanho == 0;
     }

@@ -61,13 +61,13 @@ public class Executor {
         fila.enfileira(1);
         fila.aumentarCapacidade();
         fila.enfileira(2);
-        fila.enfileira(1);
+        fila.enfileira(-1);
         fila.enfileira(7);
         fila.enfileira(2);
         fila.enfileira(4);
         System.out.println(fila.toString());
         fila.removerTodasOcorrencias(7);
-        System.out.println(fila.maior());
+        System.out.println(fila.menor());
 
     }
 }
