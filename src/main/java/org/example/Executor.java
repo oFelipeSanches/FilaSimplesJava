@@ -67,7 +67,7 @@ public class Executor {
         fila.enfileira(4);
         System.out.println(fila.toString());
         fila.removerTodasOcorrencias(7);
-        System.out.println(fila.toString());
+        System.out.println(fila.maior());
 
     }
 }

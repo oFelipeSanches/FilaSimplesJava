@@ -58,12 +58,12 @@ public class FilaSimples<T> {
         }
     }
 
-    public void removerTodasOcorrencias(T valor) {
+    public void removerTodasOcorrencias(T valorARemover) {
 
         int novoTamanho = 0;
 
         for (int i = 0; i < this.tamanho; i++) {
-            if (!this.elementos[i].equals(valor)) {
+            if (!this.elementos[i].equals(valorARemover)) {
                 this.elementos[novoTamanho++] = this.elementos[i];
             }
         }
@@ -88,6 +88,20 @@ public class FilaSimples<T> {
         construirString.append("]");
 
         return construirString.toString();
+    }
+
+    public Integer maior() {
+        if (isEmpty()) {
+            throw new RuntimeException("A Fila está vazia!");
+        }
+        Integer maior = (Integer) this.elementos[0];
+        for (int i = 0; i < this.tamanho; i++) {
+            Integer elementoAtual = (Integer) this.elementos[i];
+            if(elementoAtual > maior) {
+                maior = elementoAtual;
+            }
+        }
+        return maior;
     }
 
     public boolean isEmpty() {
