@@ -118,6 +118,17 @@ public class FilaSimples<T> {
         return menor;
     }
 
+    public Double media() {
+        if (isEmpty()) {
+            throw new RuntimeException("A Fila está vazia!");
+        }
+        int soma = 0;
+        for (int i = 0; i < this.tamanho; i++) {
+            soma += (Integer) this.elementos[i];
+        }
+        return soma / (double) this.tamanho;
+    }
+
     public boolean isEmpty() {
         return this.tamanho == 0;
     }
