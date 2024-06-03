@@ -41,23 +41,6 @@ public class FilaSimples<T> {
         return elementoASerRemovido;
     }
 
-    public T espiar() {
-        if(this.isEmpty()) {
-            return null;
-        }
-        return this.elementos[0];
-    }
-
-    public void aumentarCapacidade() {
-        if(this.tamanho == this.elementos.length) {
-            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
-            for (int i = 0; i < this.elementos.length; i++) {
-                elementosNovos[i] = this.elementos[i];
-            }
-            this.elementos = elementosNovos;
-        }
-    }
-
     public void removerTodasOcorrencias(T valorARemover) {
 
         int novoTamanho = 0;
@@ -87,6 +70,25 @@ public class FilaSimples<T> {
         construirString.append("]");
 
         return construirString.toString();
+    }
+
+    public T espiar() {
+        if(this.isEmpty()) {
+            return null;
+        }
+        return this.elementos[0];
+    }
+
+    public String buscar(T valor) {
+        if (isEmpty()) {
+            throw new RuntimeException("A Fila está vazia!");
+        }
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equals(valor)) {
+                return "O elemento " + valor + " foi encontrado na fila!";
+            }
+        }
+        return "O elemento " + valor + " não foi encontrado na fila.";
     }
 
     public Integer maior() {
@@ -128,16 +130,24 @@ public class FilaSimples<T> {
         return soma / (double) this.tamanho;
     }
 
-    public String buscar(T valor) {
-        if (isEmpty()) {
-            throw new RuntimeException("A Fila está vazia!");
-        }
+    public int quantidadeDeOcorrencias(T valor) {
+        int contador = 0;
         for (int i = 0; i < this.tamanho; i++) {
             if (this.elementos[i].equals(valor)) {
-                return "O elemento " + valor + " foi encontrado!";
+                contador++;
             }
         }
-        return "O elemento " + valor + " não foi encontrado na fila.";
+        return contador;
+    }
+
+    public void aumentarCapacidade() {
+        if(this.tamanho == this.elementos.length) {
+            T[] elementosNovos = (T[]) new Object[this.elementos.length * 2];
+            for (int i = 0; i < this.elementos.length; i++) {
+                elementosNovos[i] = this.elementos[i];
+            }
+            this.elementos = elementosNovos;
+        }
     }
 
     public boolean isEmpty() {
