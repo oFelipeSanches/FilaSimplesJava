@@ -68,7 +68,6 @@ public class FilaSimples<T> {
             }
         }
         this.tamanho = novoTamanho;
-
     }
 
     public String toString() {
@@ -127,6 +126,18 @@ public class FilaSimples<T> {
             soma += (Integer) this.elementos[i];
         }
         return soma / (double) this.tamanho;
+    }
+
+    public String buscar(T valor) {
+        if (isEmpty()) {
+            throw new RuntimeException("A Fila está vazia!");
+        }
+        for (int i = 0; i < this.tamanho; i++) {
+            if (this.elementos[i].equals(valor)) {
+                return "O elemento " + valor + " foi encontrado!";
+            }
+        }
+        return "O elemento " + valor + " não foi encontrado na fila.";
     }
 
     public boolean isEmpty() {

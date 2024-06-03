@@ -5,16 +5,15 @@ public class Executor {
 
         FilaSimples<Integer> fila = new FilaSimples<>();
 
-        fila.enfileira(2);
-        fila.enfileira(1);
-        fila.enfileira(7);
-        fila.enfileira(2);
-        fila.enfileira(4);
+        fila.enfileira(10);
+        fila.enfileira(10);
+        fila.enfileira(10);
+        fila.enfileira(10);
+        fila.enfileira(10);
+        System.out.println(fila.media());
         System.out.println(fila.toString());
-        fila.removerTodasOcorrencias(2);
+        fila.removerTodasOcorrencias(1);
         System.out.println(fila.toString());
-        fila.enfileira(2);
-        fila.enfileira(1);
         fila.aumentarCapacidade();
         fila.enfileira(2);
         fila.enfileira(1);
@@ -25,6 +24,7 @@ public class Executor {
         fila.removerTodasOcorrencias(7);
         System.out.println(fila.toString());
         System.out.println(fila.media());
+        System.out.println(fila.buscar(4));
 
     }
 }
