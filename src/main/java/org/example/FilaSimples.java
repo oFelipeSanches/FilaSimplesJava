@@ -74,7 +74,7 @@ public class FilaSimples<T> {
 
     public T espiar() {
         if(this.isEmpty()) {
-            return null;
+            throw new RuntimeException("A Fila está vazia!");
         }
         return this.elementos[0];
     }
@@ -147,6 +147,8 @@ public class FilaSimples<T> {
                 elementosNovos[i] = this.elementos[i];
             }
             this.elementos = elementosNovos;
+        } else {
+            System.out.println("A fila não está cheia para aumentar a capacidade");
         }
     }
 
